@@ -9,6 +9,16 @@ body {
   text-align: center;
 }
 
+
+main {
+  background: white;
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 2rem 0;
+}
+
+
 .formSection {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -32,3 +42,19 @@ button {
   background-color: black;
 }
 
+.comment { 
+  border: 1px solid black;
+  margin: 1rem auto;
+  border-radius: 5px;
+  max-width: 50%;
+  min-width: 15rem;
+}
+
+form {
+  margin: 2rem auto;
+  width: 50%;
+  min-width: 15rem;
+  padding: 1rem;
+  border: 1px solid green;
+  border-radius: 5px;
+}
