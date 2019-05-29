@@ -24,7 +24,7 @@ main {
     margin-bottom: 2rem;
   }
 
-}
+
 textarea {
   vertical-align: top;
   height: 5rem;
@@ -57,4 +57,5 @@ form {
   padding: 1rem;
   border: 1px solid green;
   border-radius: 5px;
+  padding: 0.5rem 1rem;
 }

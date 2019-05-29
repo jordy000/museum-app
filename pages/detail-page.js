@@ -13,6 +13,19 @@ function doesNotPassAllValidations(name, msg) {
   }
 
 
+function setNameToCapital(name) {
+      if(name.charAt(0) == name.charAt(0).toUpperCase(0)) {
+        
+        console.log('test')
+        return true;
+        
+      }
+      return false
+    }
+
+
+
+//console.log(name.charAt(0).toUpperCase(0))
 
 // add event handler
 function submitComment() {
@@ -31,6 +44,11 @@ function submitComment() {
         return null
       } 
 
+  
+      if(setNameToCapital(name)){
+        return null
+      } 
+
     const nameSubset = name.substr(0,1)
     const capitalizedName = nameSubset.toUpperCase()+name.substr(1)
 
@@ -46,9 +64,6 @@ function submitComment() {
     // display the elements on the page
     const commentSection = document.getElementById('comments')
     commentSection.appendChild(comment)
-
-   
-    
     
     // reset form values
     inputField.value = null
