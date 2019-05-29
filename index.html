@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
  <head>
    <title>Museum Guide</title>
@@ -6,12 +7,28 @@
  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
  <script src="index.js"></script>
  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+ <!-- Load d3.js -->
+ <script src="https://d3js.org/d3.v4.js"></script>
+ <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+
+
+
+
+
+<!-- Create a div where the graph will take place -->
+
+
  <body>
   <main>
     <h1> Jordy's Mobile Museum App</h1>
     <section id="gallery">
         <h2>Gallery</h2>
-        <a href="./pages/detail-page.html">
+          <div id="my_dataviz"></div>
+          <div id="div_customContent"></div>
+          <div id="div_template"></div>
+        <!-- <a href="./pages/detail-page.html">
           <img alt 'Panda' class="artObject" src= "https://cms.qz.com/wp-content/uploads/2018/05/china-pandas-eyes-turned-white-in-sichuan-2018-e1525405988661.jpg?quality=75&strip=all&w=410&h=231">
         </a>
         <a href= "./pages/detail-page.html">
@@ -25,9 +42,46 @@
         </a>
         <a href= "./pages/detail-page.html">
           <img alt 'Panda5' class="artObject" src= "https://timedotcom.files.wordpress.com/2015/02/panda-cub.jpg" width="300" height="200">
-        </a>
+        </a> -->
+        
     </section>
   </main>
  </body>
  <footer>Awsome footer</footer>
 </html>
+
+<script>
+
+  // Start by creating the svg area
+  var svg_customContent = d3.select("#div_customContent")
+    .append("svg")
+      .attr("width", 400)
+      .attr("height", 400)
+  
+  // Append a circle
+  svg_customContent.append("circle")
+    .attr("id", "circleCustomTooltip")
+    .attr("cx", 150)
+    .attr("cy", 200)
+    .attr("r", 40)
+    .attr("fill", "#69b3a2")
+  
+  // create a tooltip
+  var tooltip2 = d3.select("#div_customContent")
+    .append("div")
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("background-color", "white")
+      .style("border", "solid")
+      .style("border-width", "1px")
+      .style("border-radius", "5px")
+      .style("padding", "10px")
+      .html("<p>I'm a tooltip written in HTML</p><img src='https://github.com/holtzy/D3-graph-gallery/blob/master/img/section/ArcSmal.png?raw=true'></img><br>Fancy<br><span style='font-size: 40px;'>Isn't it?</span>");
+  
+  
+  d3.select("#circleCustomTooltip")
+    .on("mouseover", function(){return tooltip2.style("visibility", "visible");})
+    .on("mousemove", function(){return tooltip2.style("top", (event.pageY-2390)+"px").style("left",(event.pageX-800)+"px");})
+    .on("mouseout", function(){return tooltip2.style("visibility", "hidden");});
+  
+  </script>

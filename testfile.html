@@ -1,0 +1,11 @@
+<button id = "clickert" onclick= "alert('dikke test')">Click me</button>
+<script>
+    const b = document.getElementById('clickert')
+    b.addEventListener('click', function() {
+
+        console.log('inside event listener')
+    }
+    )
+    console.log(b.getAttribute("onclick"))
+    console.log(b.onclick)
+</script>
